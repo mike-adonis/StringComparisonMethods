@@ -9,13 +9,19 @@ class StringComparisonDemoTest {
     @Test
     @DisplayName("Test that i1 and i2 are equal")
     void testThati1Equali2() {
-        assertEquals(StringComparisonDemo.i1, StringComparisonDemo.i2);
+        assertTrue(StringComparisonDemo.i1.equals(StringComparisonDemo.i2));
     }
 
     @Test
     @DisplayName("Test i1 and i3 are not equal")
     void testThati1NotEquali3() {
-        assertNotEquals(StringComparisonDemo.i1, StringComparisonDemo.i3);
+        assertFalse(StringComparisonDemo.i1.equals(StringComparisonDemo.i3));
+    }
+
+    @Test
+    @DisplayName("Test that contentEquals method compares i1 and 13 correctly ")
+    void testThati1Equali3ContentEquals() {
+        assertTrue(StringComparisonDemo.i1.contentEquals(StringComparisonDemo.i3));
     }
 
 }
